@@ -11,7 +11,7 @@
         <!--Stage2 View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="Stage2ViewController" customModule="The_Button" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Stage2ViewController" id="Y6W-OH-hqX" customClass="Stage2ViewController" customModule="The_Button" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,29 +53,11 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QEO-OT-EoC">
-            <objects>
-                <viewController id="KUd-GM-412" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aVT-jI-okY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="R4i-R9-mAL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9oc-Lj-ATf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1158" y="-704"/>
-        </scene>
     </scenes>
     <resources>
         <image name="theButton" width="1024" height="1024"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
