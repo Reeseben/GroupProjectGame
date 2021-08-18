@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49DDBEA626CD7E090085E3D3 /* ControllerPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBEA526CD7E090085E3D3 /* ControllerPlaceHolder.swift */; };
-		49DDBEA826CD7E180085E3D3 /* ModePlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBEA726CD7E180085E3D3 /* ModePlaceHolder.swift */; };
+		49DDBEAC26CD87590085E3D3 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBEAB26CD87590085E3D3 /* Stage.swift */; };
+		49DDBEAE26CD88270085E3D3 /* StageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBEAD26CD88270085E3D3 /* StageController.swift */; };
 		B5789D0526CD7BE500B94C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5789D0426CD7BE500B94C48 /* AppDelegate.swift */; };
 		B5789D0726CD7BE500B94C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5789D0626CD7BE500B94C48 /* SceneDelegate.swift */; };
 		B5789D0926CD7BE500B94C48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5789D0826CD7BE500B94C48 /* ViewController.swift */; };
@@ -18,8 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49DDBEA526CD7E090085E3D3 /* ControllerPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerPlaceHolder.swift; sourceTree = "<group>"; };
-		49DDBEA726CD7E180085E3D3 /* ModePlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePlaceHolder.swift; sourceTree = "<group>"; };
+		49DDBEAB26CD87590085E3D3 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
+		49DDBEAD26CD88270085E3D3 /* StageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageController.swift; sourceTree = "<group>"; };
 		B5789D0126CD7BE500B94C48 /* The Button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Button.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5789D0426CD7BE500B94C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5789D0626CD7BE500B94C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		49DDBEA126CD7DE50085E3D3 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
-				49DDBEA526CD7E090085E3D3 /* ControllerPlaceHolder.swift */,
+				49DDBEAD26CD88270085E3D3 /* StageController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 		49DDBEA326CD7DF20085E3D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				49DDBEA726CD7E180085E3D3 /* ModePlaceHolder.swift */,
+				49DDBEAB26CD87590085E3D3 /* Stage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,10 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5789D0926CD7BE500B94C48 /* ViewController.swift in Sources */,
-				49DDBEA626CD7E090085E3D3 /* ControllerPlaceHolder.swift in Sources */,
-				49DDBEA826CD7E180085E3D3 /* ModePlaceHolder.swift in Sources */,
 				B5789D0526CD7BE500B94C48 /* AppDelegate.swift in Sources */,
 				B5789D0726CD7BE500B94C48 /* SceneDelegate.swift in Sources */,
+				49DDBEAC26CD87590085E3D3 /* Stage.swift in Sources */,
+				49DDBEAE26CD88270085E3D3 /* StageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
