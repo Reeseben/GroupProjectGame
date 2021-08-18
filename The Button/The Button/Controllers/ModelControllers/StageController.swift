@@ -14,6 +14,7 @@ class StageController{
     
     ///SOT
     var stages: [Stage] = []
+    var currentStage = 0
     
     
     //CRUD Functions
