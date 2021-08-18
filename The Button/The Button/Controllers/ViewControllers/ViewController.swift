@@ -48,7 +48,13 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Helper Methods
-    
+    func transitionToNewController(){
+        let storyboard = UIStoryboard(name: "Stage3", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "Stage3ViewController")
+        
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true)
+    }
 }
 
 

@@ -15,6 +15,8 @@
 		B5789D0C26CD7BE500B94C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5789D0A26CD7BE500B94C48 /* Main.storyboard */; };
 		B5789D0E26CD7BE600B94C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5789D0D26CD7BE600B94C48 /* Assets.xcassets */; };
 		B5789D1126CD7BE600B94C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5789D0F26CD7BE600B94C48 /* LaunchScreen.storyboard */; };
+		B5789D1A26CDA01C00B94C48 /* Stage3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5789D1926CDA01C00B94C48 /* Stage3.storyboard */; };
+		B5789D1C26CDA1CA00B94C48 /* Stage3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5789D1B26CDA1CA00B94C48 /* Stage3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B5789D0D26CD7BE600B94C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5789D1026CD7BE600B94C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5789D1226CD7BE600B94C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5789D1926CDA01C00B94C48 /* Stage3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stage3.storyboard; sourceTree = "<group>"; };
+		B5789D1B26CDA1CA00B94C48 /* Stage3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			children = (
 				B5789D0F26CD7BE600B94C48 /* LaunchScreen.storyboard */,
 				B5789D0A26CD7BE500B94C48 /* Main.storyboard */,
+				B5789D1926CDA01C00B94C48 /* Stage3.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -79,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				B5789D0826CD7BE500B94C48 /* ViewController.swift */,
+				B5789D1B26CDA1CA00B94C48 /* Stage3ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 				B5789D1126CD7BE600B94C48 /* LaunchScreen.storyboard in Resources */,
 				B5789D0E26CD7BE600B94C48 /* Assets.xcassets in Resources */,
 				B5789D0C26CD7BE500B94C48 /* Main.storyboard in Resources */,
+				B5789D1A26CDA01C00B94C48 /* Stage3.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +209,7 @@
 				B5789D0926CD7BE500B94C48 /* ViewController.swift in Sources */,
 				B5789D0526CD7BE500B94C48 /* AppDelegate.swift in Sources */,
 				B5789D0726CD7BE500B94C48 /* SceneDelegate.swift in Sources */,
+				B5789D1C26CDA1CA00B94C48 /* Stage3ViewController.swift in Sources */,
 				49DDBEAC26CD87590085E3D3 /* Stage.swift in Sources */,
 				49DDBEAE26CD88270085E3D3 /* StageController.swift in Sources */,
 			);
