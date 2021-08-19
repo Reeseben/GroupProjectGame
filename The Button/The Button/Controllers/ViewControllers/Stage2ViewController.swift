@@ -25,7 +25,9 @@ class Stage2ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        hiTimmy()
+        if gold <= 25 {
+            hiTimmy()
+        }
     }
     
     // MARK: - Actions
