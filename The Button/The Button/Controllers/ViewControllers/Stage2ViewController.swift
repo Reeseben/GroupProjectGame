@@ -32,8 +32,6 @@ class Stage2ViewController: UIViewController {
     @IBAction func theButtonTapped(_ sender: Any) {
         self.transitionToNewController(stageName: "Stage3", identifier: "Stage3ViewController")
         print("Stage 2 complete")
-        
-        
     }
     
     // MARK: - Helper Methods
@@ -51,7 +49,6 @@ class Stage2ViewController: UIViewController {
         let giveGoldAction = UIAlertAction(title: "Give Timmy gold", style: .default) { _ in
             self.goldLabel.text = "Gold: 15"
             self.giveGoldChoice()
-            
         }
         
         timmy.addAction(giveGoldAction)

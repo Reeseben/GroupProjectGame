@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold: 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3m-Sj-Mb9">
-                                <rect key="frame" x="40" y="72" width="128" height="43"/>
+                                <rect key="frame" x="40" y="69" width="128" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                         <constraints>
                             <constraint firstItem="anj-RH-Uqd" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.6" id="0oe-kb-n1Z"/>
                             <constraint firstItem="anj-RH-Uqd" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="1my-DT-Nnm"/>
-                            <constraint firstItem="S3m-Sj-Mb9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="28" id="HHn-z6-fMt"/>
+                            <constraint firstItem="S3m-Sj-Mb9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="HHn-z6-fMt"/>
                             <constraint firstItem="S3m-Sj-Mb9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="aIX-C9-zvu"/>
                             <constraint firstItem="anj-RH-Uqd" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="lTP-7V-MIl"/>
                         </constraints>
