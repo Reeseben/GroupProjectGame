@@ -28,9 +28,6 @@ DerivedData/
 # Ignore Mac DS_Store files
 .DS_Store
 
-#Ignore large movie file
-*.mp4
-
 ## App packaging
 *.ipa
 *.dSYM.zip
