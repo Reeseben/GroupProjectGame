@@ -104,9 +104,9 @@ class Stage3ViewController: UIViewController {
     
     //MARK: - Helper Methods
     func startSimon() {
-        if correctPattern.count != 8 {
+        if correctPattern.count != 5 {
             let options: [String] = ["TL","TR","BL","BR"]
-            for _ in 1...8 {
+            for _ in 1...5 {
                 correctPattern.append(options.randomElement() ?? "TL")
             }
         }

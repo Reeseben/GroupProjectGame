@@ -13,7 +13,7 @@ class Stage: Codable{
     var goldAmount: Int
     var events: [String]
     
-    
+
     init(stageNumber: Int, goldAmount: Int = 25, events: [String] = []){
         self.stageNumber = stageNumber
         self.goldAmount = goldAmount
