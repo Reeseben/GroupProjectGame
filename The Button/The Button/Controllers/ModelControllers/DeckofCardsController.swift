@@ -65,7 +65,7 @@ class DeckOfCardsController{
     }
     
     static func fetchImage(with url: URL, completion: @escaping(Result<UIImage, NetworkError>) -> Void){
-        
+        print(url)
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

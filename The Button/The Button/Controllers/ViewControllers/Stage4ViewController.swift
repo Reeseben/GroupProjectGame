@@ -11,21 +11,17 @@ class Stage4ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var backGroundView: UIView!
-    @IBOutlet weak var playerCardImage1: UIImageView!
-    @IBOutlet weak var playerCardImage2: UIImageView!
-    @IBOutlet weak var playerCardImage3: UIImageView!
-    @IBOutlet weak var playerCardImage4: UIImageView!
-    @IBOutlet weak var playerCardImage5: UIImageView!
     @IBOutlet var theButton: UIButton!
     
-    
-    
-    
-    
+    @IBOutlet weak var goldLabel: UILabel!
+    @IBOutlet weak var playerCardImage1: UIImageView!
+  
     
     // MARK: - Properties
-    var playerHand: [Card] = []
-    var cardImages: [UIImage] = []
+    private var currentCard: Card?
+    private var nextCard: Card?
+    //var currentGold: Int = StageController.shared.stages[3].goldAmount
+   
     // MARK: - Lifecycles
     
     override func viewDidLoad() {
@@ -33,16 +29,33 @@ class Stage4ViewController: UIViewController {
         theButton.layer.cornerRadius = 35
         theButton.layer.masksToBounds = true
         addGradient()
-        shuffleDeck()
+        //goldLabel.text = "Gold: \(currentGold)"
+        //shuffleDeck()
+       
         drawCard()
-        drawCard()
-        drawCard()
-        drawCard()
+        drawNext()
     }
     
     override var shouldAutorotate: Bool{
         return false
     }
+    // MARK: - ACTIONS
+    @IBAction func highButtonTapped(_ sender: Any) {
+        playerCardImage1.isHidden = false
+        guard let  currentCard = currentCard else { return }
+        print("\(currentCard.code)")
+        
+        
+    }
+    @IBAction func lowButtonTapped(_ sender: Any) {
+        playerCardImage1.isHidden = false
+        guard let  nextCard = nextCard else { return }
+        
+        print("\(nextCard.code)")
+    
+    }
+    
+    
     
     // MARK: - Helper Methods
     func addGradient(){
@@ -60,7 +73,15 @@ class Stage4ViewController: UIViewController {
         
         
     }
-}
+}// End of class
+
+//blackjack function
+extension Stage4ViewController{
+    
+    
+}// End of extension
+
+//fetch functions
 extension Stage4ViewController{
     
     func shuffleDeck(){
@@ -84,9 +105,31 @@ extension Stage4ViewController{
                 switch result{
                 
                 case .success(let card):
+                    
+                    self.currentCard = card
                     print("Adding \(card.code) to the hand")
-                    self.playerHand.append(card)
+                    
+                    //self.playerCardImage1.isHidden = true
                     self.fetchImage(with: card.image)
+                    
+                case .failure(let error):
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                }
+            }
+        }
+    }
+    func drawNext(){
+        DeckOfCardsController.drawCard { (result) in
+            DispatchQueue.main.async {
+                switch result{
+                
+                case .success(let card):
+                    
+                    self.nextCard = card
+                    print("Adding \(card.code) to the next hand")
+                    
+                    //self.playerCardImage1.isHidden = true
+                    //self.fetchImage(with: card.image)
                     
                 case .failure(let error):
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -98,13 +141,10 @@ extension Stage4ViewController{
     func fetchImage(with url: URL){
         DeckOfCardsController.fetchImage(with: url ) { (result) in
             DispatchQueue.main.async {
-                
-                
                 switch result{
                 
                 case .success(let image):
-                    self.cardImages.append(image)
-                    self.self.setImage(for: self.cardImages.count)
+                    self.playerCardImage1.image = image
                 case .failure(let error):
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 }
@@ -112,21 +152,4 @@ extension Stage4ViewController{
         }
     }
     
-    func setImage(for number: Int ){
-        
-        switch number {
-        case 1:
-            playerCardImage1.image = cardImages[number-1]
-        case 2:
-            playerCardImage2.image = cardImages[number-1]
-        case 3:
-            playerCardImage3.image = cardImages[number-1]
-        case 4:
-            playerCardImage4.image = cardImages[number-1]
-        case 5:
-            playerCardImage5.image = cardImages[number-1]
-        default:
-            return
-        }
-    }
-}
+}// End of extension

@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         theButton.layer.cornerRadius = 35
         theButton.layer.masksToBounds = true
     }
+    //Used for testing specific stages
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.transitionToNewController(stageName: "Stage4", identifier: "Stage4ViewController")
+       
+    }
     
     //MARK: - Properties
     @IBAction func theButtonWasTapped(_ sender: Any) {
