@@ -18,14 +18,9 @@ class Stage2ViewController: UIViewController {
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-    
-   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         hiTimmy()
     }

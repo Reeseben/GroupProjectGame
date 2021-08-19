@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493B664B26CE0F7D00E05D46 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B664A26CE0F7D00E05D46 /* NetworkError.swift */; };
+		493B664D26CE0FA600E05D46 /* DeckOfCardsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B664C26CE0FA600E05D46 /* DeckOfCardsAPI.swift */; };
+		493B664F26CE100800E05D46 /* DeckofCardsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B664E26CE100800E05D46 /* DeckofCardsController.swift */; };
 		49DDBEAC26CD87590085E3D3 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBEAB26CD87590085E3D3 /* Stage.swift */; };
 		49DDBEAE26CD88270085E3D3 /* StageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBEAD26CD88270085E3D3 /* StageController.swift */; };
 		49DDBEB126CD9F1C0085E3D3 /* Stage2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DDBEB026CD9F1C0085E3D3 /* Stage2.storyboard */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493B664A26CE0F7D00E05D46 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		493B664C26CE0FA600E05D46 /* DeckOfCardsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsAPI.swift; sourceTree = "<group>"; };
+		493B664E26CE100800E05D46 /* DeckofCardsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckofCardsController.swift; sourceTree = "<group>"; };
 		49DDBEAB26CD87590085E3D3 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		49DDBEAD26CD88270085E3D3 /* StageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageController.swift; sourceTree = "<group>"; };
 		49DDBEB026CD9F1C0085E3D3 /* Stage2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stage2.storyboard; sourceTree = "<group>"; };
@@ -55,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493B664926CE0F6700E05D46 /* Helpers + Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49DDBEB626CDA4960085E3D3 /* Extensions.swift */,
+				493B664A26CE0F7D00E05D46 /* NetworkError.swift */,
+			);
+			path = "Helpers + Extensions";
+			sourceTree = "<group>";
+		};
 		49DDBE9E26CD7DC90085E3D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				49DDBEAD26CD88270085E3D3 /* StageController.swift */,
+				493B664E26CE100800E05D46 /* DeckofCardsController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -107,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				49DDBEAB26CD87590085E3D3 /* Stage.swift */,
+				493B664C26CE0FA600E05D46 /* DeckOfCardsAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,11 +147,11 @@
 		B5789D0326CD7BE500B94C48 /* The Button */ = {
 			isa = PBXGroup;
 			children = (
+				493B664926CE0F6700E05D46 /* Helpers + Extensions */,
 				49DDBEA326CD7DF20085E3D3 /* Models */,
 				49DDBEA026CD7DE00085E3D3 /* Controllers */,
 				49DDBE9E26CD7DC90085E3D3 /* Views */,
 				B5789D1826CD7BF400B94C48 /* Resources */,
-				49DDBEB626CDA4960085E3D3 /* Extensions.swift */,
 			);
 			path = "The Button";
 			sourceTree = "<group>";
@@ -231,7 +248,10 @@
 				49DDBEBB26CDBD990085E3D3 /* Stage4ViewController.swift in Sources */,
 				49DDBEAC26CD87590085E3D3 /* Stage.swift in Sources */,
 				49DDBEAE26CD88270085E3D3 /* StageController.swift in Sources */,
+				493B664D26CE0FA600E05D46 /* DeckOfCardsAPI.swift in Sources */,
 				49DDBEB726CDA4960085E3D3 /* Extensions.swift in Sources */,
+				493B664B26CE0F7D00E05D46 /* NetworkError.swift in Sources */,
+				493B664F26CE100800E05D46 /* DeckofCardsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
