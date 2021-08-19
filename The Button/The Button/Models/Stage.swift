@@ -9,10 +9,13 @@ import Foundation
 
 ///The object
 class Stage: Codable{
-    let stageNumber: Int
+    var stageNumber: Int
+    var goldAmount: Int
+    var events: [String]
     
-    
-    init(stageNumber: Int){
+    init(stageNumber: Int, goldAmount: Int = 25, events: [String] = []){
         self.stageNumber = stageNumber
+        self.goldAmount = goldAmount
+        self.events = events
     }
 }

@@ -26,6 +26,15 @@ class StageController{
         saveToPersistenceStore()
     }
     
+    func updateStage(for stage: Stage, stageNumber: Int, goldAmount: Int, events: [String] ) {
+        
+        stage.stageNumber = stageNumber
+        stage.goldAmount = goldAmount
+        stage.events = events
+        
+        saveGameState()
+    }
+    
     func saveGameState(){
         saveToPersistenceStore()
     }
