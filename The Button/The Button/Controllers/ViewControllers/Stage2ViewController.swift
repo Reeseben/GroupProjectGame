@@ -18,6 +18,8 @@ class Stage2ViewController: UIViewController {
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        theButton.layer.cornerRadius = 35
+        theButton.layer.masksToBounds = true
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
