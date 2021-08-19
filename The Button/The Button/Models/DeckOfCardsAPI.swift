@@ -27,15 +27,14 @@ struct Card: Codable {
     let value, suit, code: String
 }
 
+
 // MARK: - Shuffled
 struct Shuffled: Codable {
-    let success: Bool
     let deckID: String
     let remaining: Int
     let shuffled: Bool
 
     enum CodingKeys: String, CodingKey {
-        case success
         case deckID = "deck_id"
         case remaining, shuffled
     }

@@ -15,25 +15,25 @@ class DeckOfCardsController{
     static let shuffleComponent = "shuffle"
     static let pileComponent = "pile"
     
-    static func shuffleDeck(completion: @escaping(Result<Bool, NetworkError>) -> Void){
+    static func shuffleDeck(completion: @escaping() -> Void){
         
-        guard let baseURL = baseURL else { return completion(.failure(.invalidURL))}
+        guard let baseURL = baseURL else { return completion()}
         let finalURL = baseURL.appendingPathComponent(shuffleComponent)
         print(finalURL)
         
         let task = URLSession.shared.dataTask(with: finalURL) { data, _, error in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                return(completion(.failure(.thrownError(error))))
+                return(completion())
             }
-            guard let data = data else { return completion(.failure(.noData))}
+            guard let data = data else { return completion()}
             
             do{
-                let shuffled = try JSONDecoder().decode(Shuffled.self, from: data)
-                let success = shuffled.shuffled
-                completion(.success(success))
+                let _ = try JSONDecoder().decode(Shuffled.self, from: data)
+               // let success = shuffled.shuffled
+                completion()
             }catch{
-                completion(.failure(.unableToDecde))
+                completion()
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }

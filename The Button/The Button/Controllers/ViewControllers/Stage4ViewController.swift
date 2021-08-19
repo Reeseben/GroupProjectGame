@@ -15,13 +15,20 @@ class Stage4ViewController: UIViewController {
     
     @IBOutlet weak var goldLabel: UILabel!
     @IBOutlet weak var playerCardImage1: UIImageView!
-  
+    @IBOutlet weak var playerCardImage2: UIImageView!
+    
+    @IBOutlet weak var highButton: UIButton!
+    @IBOutlet weak var lowButton: UIButton!
+    
+    
     
     // MARK: - Properties
     private var currentCard: Card?
     private var nextCard: Card?
+    private var play: Int = 0
+    private var wins: Int = 0
     //var currentGold: Int = StageController.shared.stages[3].goldAmount
-   
+    
     // MARK: - Lifecycles
     
     override func viewDidLoad() {
@@ -31,9 +38,9 @@ class Stage4ViewController: UIViewController {
         addGradient()
         //goldLabel.text = "Gold: \(currentGold)"
         //shuffleDeck()
-       
+        
         drawCard()
-        drawNext()
+        
     }
     
     override var shouldAutorotate: Bool{
@@ -41,21 +48,59 @@ class Stage4ViewController: UIViewController {
     }
     // MARK: - ACTIONS
     @IBAction func highButtonTapped(_ sender: Any) {
-        playerCardImage1.isHidden = false
-        guard let  currentCard = currentCard else { return }
-        print("\(currentCard.code)")
+        play += 1
         
+        lowButton.isHidden = true
+        playerCardImage2.isHidden = false
+     
+        guard let currentCard = currentCard else { return }
+        guard let nextCard = nextCard else { return }
         
+        guard let current = dict[currentCard.value] else { return }
+        guard let next = dict[nextCard.value] else { return }
+        
+        if current < next {
+            print("You win")
+            wins += 1
+        } else if current > next {
+            print("You loose")
+            
+        }else{
+            print("Tie game stranger. House always wins...")
+            
+        }
     }
+    
     @IBAction func lowButtonTapped(_ sender: Any) {
-        playerCardImage1.isHidden = false
-        guard let  nextCard = nextCard else { return }
+        play += 1
         
-        print("\(nextCard.code)")
-    
+        highButton.isHidden = true
+        playerCardImage2.isHidden = false
+        guard let  currentCard = currentCard else { return }
+        guard let nextCard = nextCard else { return }
+      
+        guard let current = dict[currentCard.value] else { return }
+        guard let next = dict[nextCard.value] else { return }
+        
+        if current > next {
+            print("You win")
+            wins += 1
+            
+        } else if current < next {
+            print("You loose")
+            
+        }else{
+            print("Tie game stranger. House always wins...")
+        }
     }
     
     
+    @IBAction func resetButtonTapped(_ sender: Any) {
+        reset()
+        drawNext()
+        lowButton.isHidden = false
+        highButton.isHidden = false
+    }
     
     // MARK: - Helper Methods
     func addGradient(){
@@ -73,11 +118,36 @@ class Stage4ViewController: UIViewController {
         
         
     }
+    
+    let dict: [String : Int] = [
+        
+        "ACE" : 1,
+        "2" : 2,
+        "3" : 3,
+        "4" : 4,
+        "5" : 5,
+        "6" : 6,
+        "7" : 7,
+        "8" : 8,
+        "9" : 9,
+        "0" : 10,
+        "JACK" : 11,
+        "QUEEN" : 12,
+        "KING" : 13
+    ]
+    
+    
 }// End of class
 
 //blackjack function
 extension Stage4ViewController{
-    
+    func reset(){
+        shuffleDeck()
+        
+        playerCardImage1.image = playerCardImage2.image
+        playerCardImage2.isHidden = true
+        
+    }
     
 }// End of extension
 
@@ -85,17 +155,8 @@ extension Stage4ViewController{
 extension Stage4ViewController{
     
     func shuffleDeck(){
-        DeckOfCardsController.shuffleDeck { (result) in
-            DispatchQueue.main.async {
-                switch result{
-                
-                case .success(let success):
-                    
-                    print(success)
-                case .failure(let error):
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                }
-            }
+        DeckOfCardsController.shuffleDeck {
+            print("we think we shuffled")
         }
     }
     
@@ -109,7 +170,7 @@ extension Stage4ViewController{
                     self.currentCard = card
                     print("Adding \(card.code) to the hand")
                     
-                    //self.playerCardImage1.isHidden = true
+                    self.drawNext()
                     self.fetchImage(with: card.image)
                     
                 case .failure(let error):
@@ -128,9 +189,23 @@ extension Stage4ViewController{
                     self.nextCard = card
                     print("Adding \(card.code) to the next hand")
                     
-                    //self.playerCardImage1.isHidden = true
-                    //self.fetchImage(with: card.image)
-                    
+                self.playerCardImage2.isHidden = true
+                self.fetchImage2(with: card.image)
+                
+                case .failure(let error):
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                }
+            }
+        }
+    }
+    
+    func fetchImage2(with url: URL){
+        DeckOfCardsController.fetchImage(with: url ) { (result) in
+            DispatchQueue.main.async {
+                switch result{
+                
+                case .success(let image):
+                    self.playerCardImage2.image = image
                 case .failure(let error):
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 }
@@ -153,3 +228,4 @@ extension Stage4ViewController{
     }
     
 }// End of extension
+
