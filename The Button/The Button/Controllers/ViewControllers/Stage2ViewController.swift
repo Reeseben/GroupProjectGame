@@ -14,6 +14,7 @@ class Stage2ViewController: UIViewController {
     @IBOutlet weak var goldLabel: UILabel!
     
     // MARK: - Properties
+    var gold = StageController.shared.stage.goldAmount
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -30,8 +31,8 @@ class Stage2ViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func theButtonTapped(_ sender: Any) {
-        self.transitionToNewController(stageName: "Stage3", identifier: "Stage3ViewController")
-        print("Stage 2 complete")
+        StageController.shared.updateStage(stageNumber: 2, goldAmount: gold, newEvents: nil)
+        exit(0)
     }
     
     // MARK: - Helper Methods
@@ -47,7 +48,9 @@ class Stage2ViewController: UIViewController {
             }
         }
         let giveGoldAction = UIAlertAction(title: "Give Timmy gold", style: .default) { _ in
-            self.goldLabel.text = "Gold: 15"
+            self.gold -= 10
+            StageController.shared.updateStage(stageNumber: 1, goldAmount: self.gold, newEvents: EventConstants.gaveTimmyGold)
+            self.goldLabel.text = "Gold: \(self.gold)"
             self.giveGoldChoice()
         }
         
@@ -61,7 +64,9 @@ class Stage2ViewController: UIViewController {
         let timmy = UIAlertController(title: "Oh...okay...", message: "Saddened, the voice begins to fade.", preferredStyle: .alert)
         
         let changeYourMindAction = UIAlertAction(title: "\"Wait kid, here you go.\"", style: .default) { _ in
-            self.goldLabel.text = "Gold: 15"
+            self.gold -= 10
+            StageController.shared.updateStage(stageNumber: 1, goldAmount: self.gold, newEvents: EventConstants.hesitatedGold)
+            self.goldLabel.text = "Gold: \(self.gold)"
             self.giveGoldChoice()
         }
         

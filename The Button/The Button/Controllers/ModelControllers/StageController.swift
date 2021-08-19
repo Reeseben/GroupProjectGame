@@ -13,7 +13,7 @@ class StageController{
     static let shared = StageController()
     
     ///SOT
-    var stages: [Stage] = []
+    var stage: Stage = Stage(stageNumber: -1)
     var currentStage = 0
     
     
@@ -21,16 +21,20 @@ class StageController{
     
     func createStage(with stageNumber: Int){
         let newStage = Stage(stageNumber: stageNumber)
-        stages.append(newStage)
+        stage = newStage
         
         saveToPersistenceStore()
     }
     
-    func updateStage(for stage: Stage, stageNumber: Int, goldAmount: Int, events: [String] ) {
+    func updateStage(stageNumber: Int, goldAmount: Int?, newEvents: String? ) {
         
         stage.stageNumber = stageNumber
-        stage.goldAmount = goldAmount
-        stage.events = events
+        if let goldAmount = goldAmount {
+            stage.goldAmount = goldAmount
+        }
+        if let newEvents = newEvents {
+            stage.events.append(newEvents)
+        }
         
         saveGameState()
     }
@@ -53,7 +57,7 @@ extension StageController{
 
     func saveToPersistenceStore() {
         do {
-            let data = try JSONEncoder().encode(stages)
+            let data = try JSONEncoder().encode(stage)
             try data.write(to: createPersistenceStore())
         } catch {
             print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
@@ -63,7 +67,7 @@ extension StageController{
     func loadFromPersistenceStore() {
         do {
             let data = try Data(contentsOf: createPersistenceStore())
-            stages = try JSONDecoder().decode([Stage].self, from: data)
+            stage = try JSONDecoder().decode(Stage.self, from: data)
         } catch {
             print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
         }

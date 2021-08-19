@@ -20,6 +20,7 @@ class Stage4ViewController: UIViewController {
     @IBOutlet weak var highButton: UIButton!
     @IBOutlet weak var lowButton: UIButton!
     
+    @IBOutlet var winsLabel: UILabel!
     
     
     // MARK: - Properties
@@ -62,6 +63,7 @@ class Stage4ViewController: UIViewController {
         if current < next {
             print("You win")
             wins += 1
+            checkWin()
         } else if current > next {
             print("You loose")
             
@@ -85,6 +87,7 @@ class Stage4ViewController: UIViewController {
         if current > next {
             print("You win")
             wins += 1
+            checkWin()
             
         } else if current < next {
             print("You loose")
@@ -103,6 +106,14 @@ class Stage4ViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
+    func checkWin() {
+        winsLabel.text = "Wins: \(wins)"
+        if wins >= 5 {
+            StageController.shared.updateStage(stageNumber: 4, goldAmount: nil, newEvents: nil)
+            exit(0)
+        }
+    }
+    
     func addGradient(){
         let gL = CAGradientLayer()
         

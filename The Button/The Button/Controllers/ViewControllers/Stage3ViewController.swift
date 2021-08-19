@@ -122,8 +122,8 @@ class Stage3ViewController: UIViewController {
     func showColor(until index: Int) {
         if CurrentTurn >= correctPattern.count {
             print("Moving to next stage!")
-            self.transitionToNewController(stageName: "Stage4", identifier: "Stage4ViewController")
-            return
+            StageController.shared.updateStage(stageNumber: 3, goldAmount: nil, newEvents: nil)
+            exit(0)
         }
         if currentAnimation <= index {
             isAnimating = true

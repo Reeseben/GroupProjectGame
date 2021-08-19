@@ -18,14 +18,18 @@ class ViewController: UIViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        StageController.shared.loadFromPersistenceStore()
+        
+        theButton.isHidden = true
+        
         theButton.layer.cornerRadius = 35
         theButton.layer.masksToBounds = true
+        
     }
     //Used for testing specific stages
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.transitionToNewController(stageName: "Stage4", identifier: "Stage4ViewController")
-       
+        checkStage()
     }
     
     //MARK: - Properties
@@ -43,8 +47,8 @@ class ViewController: UIViewController {
                 if index == backgroundColors.count - 1{
                     newColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
                     print("Stage 1 complete")
-                    
-                    self.transitionToNewController(stageName: "Stage2", identifier: "Stage2ViewController")
+                    StageController.shared.updateStage(stageNumber: 1, goldAmount: nil, newEvents: nil)
+                    exit(0)
                 } else {
                     newColor = backgroundColors[index + 1]
                 }
@@ -55,7 +59,29 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Helper Methods
-
+    func checkStage(){
+        let stageNumber = StageController.shared.stage.stageNumber
+        
+        switch stageNumber {
+        case -1:
+            print("New Player Detected.")
+            StageController.shared.createStage(with: 0)
+            theButton.isHidden = false
+        case 0:
+            theButton.isHidden = false
+            return
+        case 1:
+            transitionToNewController(stageName: "Stage2", identifier: "Stage2ViewController")
+        case 2:
+            transitionToNewController(stageName: "Stage3", identifier: "Stage3ViewController")
+        case 3:
+            transitionToNewController(stageName: "Stage4", identifier: "Stage4ViewController")
+        case 4 :
+            transitionToNewController(stageName: "JudgementHall", identifier: "JudgementHall")
+        default:
+            print("Honestly I don't know why this ran.")
+        }
+    }
 }
 
 
