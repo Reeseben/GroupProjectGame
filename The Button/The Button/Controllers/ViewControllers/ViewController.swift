@@ -37,7 +37,8 @@ class ViewController: UIViewController {
                 if index == backgroundColors.count - 1{
                     newColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
                     print("Stage 1 complete")
-                    //First progression would occurr when this point hits.
+                    
+                    self.transitionToNewController(stageName: "Stage2", identifier: "Stage2ViewController")
                 } else {
                     newColor = backgroundColors[index + 1]
                 }
@@ -48,13 +49,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Helper Methods
-    func transitionToNewController(){
-        let storyboard = UIStoryboard(name: "Stage3", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "Stage3ViewController")
-        
-        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true)
-    }
+
 }
 
 

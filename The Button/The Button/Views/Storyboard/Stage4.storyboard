@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stage4 View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Stage4ViewController" id="Y6W-OH-hqX" customClass="Stage4ViewController" customModule="The_Button" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-SI-n68">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liL-qB-UBD">
+                                        <rect key="frame" x="83" y="285" width="248" height="248"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="liL-qB-UBD" secondAttribute="height" multiplier="1:1" id="SeY-J9-pHv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="theButton"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="liL-qB-UBD" firstAttribute="centerX" secondItem="HFa-SI-n68" secondAttribute="centerX" id="08L-w3-wVe"/>
+                                    <constraint firstItem="liL-qB-UBD" firstAttribute="centerY" secondItem="HFa-SI-n68" secondAttribute="centerY" id="7en-HE-BZK"/>
+                                    <constraint firstItem="liL-qB-UBD" firstAttribute="width" secondItem="HFa-SI-n68" secondAttribute="width" multiplier="0.6" id="cPZ-A0-hnl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HFa-SI-n68" secondAttribute="trailing" id="1aa-H4-dbT"/>
+                            <constraint firstItem="HFa-SI-n68" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1xv-2Y-Vi5"/>
+                            <constraint firstItem="HFa-SI-n68" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7iR-c2-dfe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HFa-SI-n68" secondAttribute="bottom" id="FAV-Cz-NeI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backGroundView" destination="HFa-SI-n68" id="ML8-mF-P1e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="theButton" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
