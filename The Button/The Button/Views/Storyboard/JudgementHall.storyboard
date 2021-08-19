@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Judgement Hall View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="JudgementHall" id="Y6W-OH-hqX" customClass="JudgementHallViewController" customModule="The_Button" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2m-Pl-c0k">
+                                <rect key="frame" x="83" y="329" width="248" height="248"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V2m-Pl-c0k" secondAttribute="height" multiplier="1:1" id="lo8-7N-AqQ"/>
+                                </constraints>
+                                <state key="normal" image="theButton"/>
+                                <connections>
+                                    <action selector="theButtonWasTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="35N-P9-cMD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V2m-Pl-c0k" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="FL8-WW-Hcd"/>
+                            <constraint firstItem="V2m-Pl-c0k" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="gMu-fx-k0b"/>
+                            <constraint firstItem="V2m-Pl-c0k" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.6" id="haA-PR-nXe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="theButton" destination="V2m-Pl-c0k" id="gqt-x0-mOf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="97"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="theButton" width="1024" height="1024"/>
+    </resources>
+</document>
