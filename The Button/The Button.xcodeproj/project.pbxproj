@@ -68,13 +68,9 @@
 			children = (
 				B5789D0F26CD7BE600B94C48 /* LaunchScreen.storyboard */,
 				B5789D0A26CD7BE500B94C48 /* Main.storyboard */,
-
 				B5789D1926CDA01C00B94C48 /* Stage3.storyboard */,
-
 				49DDBEB026CD9F1C0085E3D3 /* Stage2.storyboard */,
-
 				49DDBEBC26CDBDBD0085E3D3 /* Stage4.storyboard */,
-
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -100,13 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				B5789D0826CD7BE500B94C48 /* ViewController.swift */,
-
-				B5789D1B26CDA1CA00B94C48 /* Stage3ViewController.swift */,
-
 				49DDBEB426CDA1450085E3D3 /* Stage2ViewController.swift */,
-
+				B5789D1B26CDA1CA00B94C48 /* Stage3ViewController.swift */,
 				49DDBEBA26CDBD990085E3D3 /* Stage4ViewController.swift */,
-
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

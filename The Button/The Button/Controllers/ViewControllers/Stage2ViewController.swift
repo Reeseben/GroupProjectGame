@@ -33,7 +33,7 @@ class Stage2ViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func theButtonTapped(_ sender: Any) {
-        //self.transitionToNewController(stageName: "Stage3", identifier: <#T##String#>)
+        self.transitionToNewController(stageName: "Stage3", identifier: "Stage3ViewController")
         print("Stage 2 complete")
         
         

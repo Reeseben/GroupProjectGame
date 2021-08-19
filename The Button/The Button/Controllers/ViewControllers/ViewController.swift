@@ -22,13 +22,6 @@ class ViewController: UIViewController {
         theButton.layer.masksToBounds = true
     }
     
-    //DELETE THIS
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.transitionToNewController(stageName: "Stage4", identifier: "Stage4ViewController")
-    }
-    
-    
     //MARK: - Properties
     @IBAction func theButtonWasTapped(_ sender: Any) {
         
@@ -45,7 +38,7 @@ class ViewController: UIViewController {
                     newColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
                     print("Stage 1 complete")
                     
-                    //First progression would occurr when this point hits.
+                    self.transitionToNewController(stageName: "Stage2", identifier: "Stage2ViewController")
                 } else {
                     newColor = backgroundColors[index + 1]
                 }
