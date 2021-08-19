@@ -16,6 +16,7 @@ class Stage4ViewController: UIViewController {
     @IBOutlet weak var playerCardImage3: UIImageView!
     @IBOutlet weak var playerCardImage4: UIImageView!
     @IBOutlet weak var playerCardImage5: UIImageView!
+    @IBOutlet var theButton: UIButton!
     
     
     
@@ -29,6 +30,8 @@ class Stage4ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        theButton.layer.cornerRadius = 35
+        theButton.layer.masksToBounds = true
         addGradient()
         shuffleDeck()
         drawCard()

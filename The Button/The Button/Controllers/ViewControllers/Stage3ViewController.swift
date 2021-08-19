@@ -122,7 +122,7 @@ class Stage3ViewController: UIViewController {
     func showColor(until index: Int) {
         if CurrentTurn >= correctPattern.count {
             print("Moving to next stage!")
-            //BEREK
+            self.transitionToNewController(stageName: "Stage4", identifier: "Stage4ViewController")
             return
         }
         if currentAnimation <= index {

@@ -102,6 +102,7 @@
                         <outlet property="playerCardImage3" destination="2AX-2q-b7x" id="Z0C-F0-5zJ"/>
                         <outlet property="playerCardImage4" destination="VA0-I8-9d8" id="RIC-Sa-4gV"/>
                         <outlet property="playerCardImage5" destination="kBQ-69-Ts8" id="0lu-TC-9dd"/>
+                        <outlet property="theButton" destination="liL-qB-UBD" id="A03-oB-eXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
